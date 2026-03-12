@@ -13,37 +13,28 @@
 <meta name="author" content="Ishika Makeover">
 
 <meta name="robots" content="index, follow">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Ishika Makeover | Best Beauty Salon in Sangrur">
-<meta property="og:description" content="Top beauty salon in Sangrur for bridal makeup, party makeup, hair styling, facials & earlobe treatment. Visit Ishika Makeover today.">
-<meta property="og:type" content="website">
-<meta property="og:phone_number" content="+918360118469">
-<meta property="og:locale" content="en_IN">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* Exact Color Palette from Reference Image */
         :root {
-            --dark-charcoal: #333132;
-            --warm-white: #f7f6f2;
-            --taupe: #8c7f73;
-            --taupe-light: #dcd6d0;
+            --dark-charcoal: #2c1e22; 
+            --warm-white: #fdfafb; 
+            --taupe: #d40342; 
+            --taupe-light: #f4e3e4; 
+            --gold-accent: #d40342; 
             --text-light: #ffffff;
-            --text-dark: #1a1a1a;
+            --text-dark: #2b1b1e; 
             
             --font-serif: 'Cormorant Garamond', serif;
             --font-sans: 'Montserrat', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--font-sans);
             background-color: var(--warm-white);
@@ -52,17 +43,10 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: var(--font-serif);
-            font-weight: 400;
-        }
+        h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; }
+        a { text-decoration: none; color: inherit; transition: 0.3s ease; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* 1. Header */
+        /* 1. Header & Mobile Menu */
         header {
             position: absolute;
             top: 0;
@@ -71,46 +55,43 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 10;
+            z-index: 100;
         }
-
-        .nav-left, .nav-right {
+        
+        .nav-links {
             display: flex;
             gap: 40px;
+            align-items: center;
         }
 
-        .nav-left a, .nav-right a {
-            font-size: 10px;
+        .nav-links a {
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--text-light);
-            font-weight: 400;
+            font-weight: 500;
         }
+        .nav-links a:hover { color: var(--gold-accent); }
 
-        .logo-container {
-            margin: 0 60px;
-            text-align: center;
-            color: var(--text-light);
-        }
+        .logo-container { margin: 0 60px; text-align: center; color: var(--text-light); z-index: 101; }
+        .logo { font-family: var(--font-serif); font-size: 38px; letter-spacing: 4px; line-height: 1; }
+        .logo-sub { font-size: 10px; letter-spacing: 6px; text-transform: uppercase; margin-top: 5px; color: var(--taupe-light); }
 
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 32px;
-            letter-spacing: 4px;
-            line-height: 1;
-        }
-
-        .logo-sub {
-            font-size: 9px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            margin-top: 5px;
+        .hamburger {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            right: 5vw;
+            z-index: 101;
         }
 
         /* 2. Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(20, 20, 20, 0.4), rgba(20, 20, 20, 0.7)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2000&auto=format&fit=crop') center/cover;
+            background: linear-gradient(rgba(44, 30, 34, 0.6), rgba(44, 30, 34, 0.8)), 
+                        url('https://raw.githubusercontent.com/makeoverishika1818-ux/ishikamakeover/main/home.jpeg') center/cover no-repeat fixed;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -120,328 +101,124 @@
             padding: 0 20px;
         }
 
-        .hero-tagline {
-            font-size: 10px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
-            line-height: 1.1;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .hero p {
-            font-size: 13px;
-            max-width: 600px;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        /* 3. Dark Services Grid Section */
-        .dark-section {
-            background-color: var(--dark-charcoal);
-            color: var(--text-light);
-            padding: 100px 5vw;
-            text-align: center;
-            position: relative;
-        }
-
-        .watermark {
-            position: absolute;
-            left: 5%;
-            top: 20%;
-            font-family: var(--font-serif);
-            font-size: 250px;
-            color: rgba(255,255,255,0.03);
-            line-height: 1;
-            pointer-events: none;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .section-desc {
-            font-size: 12px;
-            max-width: 600px;
-            margin: 0 auto 60px;
-            line-height: 1.8;
-            color: #b0b0b0;
-            font-weight: 300;
-        }
-
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto 60px;
-        }
-
-        .grid-item {
-            position: relative;
-            height: 450px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .grid-item::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3);
-            transition: background 0.4s ease;
-        }
-
-        .grid-item:hover::before {
-            background: rgba(0,0,0,0.5);
-        }
-
-        .grid-item span {
-            position: relative;
-            font-family: var(--font-serif);
-            font-size: 22px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .btn-white {
+        .hero-tagline { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 20px; color: var(--gold-accent); }
+        .hero h1 { font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 1.1; margin-bottom: 30px; letter-spacing: 2px; }
+        .hero p { font-size: 14px; max-width: 650px; line-height: 1.9; font-weight: 300; margin-bottom: 40px; }
+        .btn-gold {
+            background: var(--gold-accent); color: #fff; padding: 15px 40px; font-size: 11px;
+            letter-spacing: 3px; text-transform: uppercase; border: none; cursor: pointer;
             display: inline-block;
-            background: var(--text-light);
-            color: var(--dark-charcoal);
-            padding: 15px 40px;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 500;
-            transition: opacity 0.3s;
         }
+        .btn-gold:hover { background: #ab6772; }
 
-        .btn-white:hover { opacity: 0.8; }
+        /* 3. Dark Services Grid */
+        .dark-section { background-color: var(--dark-charcoal); color: var(--text-light); padding: 80px 5vw; text-align: center; }
+        .section-title { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 20px; letter-spacing: 1px; }
+        .section-desc { font-size: 14px; max-width: 600px; margin: 0 auto 50px; line-height: 1.8; color: #d0c2c4; font-weight: 300; }
 
-        /* 4. Philosophy Section (Light) */
-        .philosophy-section {
-            background-color: var(--warm-white);
-            padding: 120px 5vw;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .philosophy-title {
-            font-size: 2.2rem;
-            line-height: 1.4;
-            color: var(--text-dark);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .philosophy-text {
-            font-size: 12px;
-            line-height: 2;
-            color: #555;
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-
-        .btn-taupe {
-            display: inline-block;
-            background: var(--taupe);
-            color: var(--text-light);
-            padding: 15px 40px;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn-taupe:hover { background: #7a6e63; }
-
-        /* 5. Highlight Section (Overlapping Editorial Layout) */
-        .highlight-section {
-            background-color: var(--taupe-light);
-            padding: 100px 5vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .highlight-container {
-            display: flex;
-            max-width: 1200px;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .highlight-images {
-            position: relative;
-            flex: 1;
-            height: 600px;
-        }
-
-        .img-large {
-            width: 80%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-        }
-
-        .img-small {
-            position: absolute;
-            bottom: -30px;
-            right: 0;
-            width: 50%;
-            height: 60%;
-            object-fit: cover;
-            border: 10px solid var(--taupe-light);
-        }
-
-        .highlight-content {
-            flex: 1;
-            padding-left: 40px;
-        }
-
-        .highlight-content h2 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-        }
-
-        .highlight-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-
-        .highlight-list li {
-            font-size: 13px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-        }
-
-        .highlight-list li::before {
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 1px;
-            background: var(--text-dark);
-            margin-right: 15px;
-        }
-
-        /* 6. Comprehensive Menu Matrix */
-        .full-menu {
-            padding: 100px 5vw;
-            background: var(--warm-white);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .image-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto 50px; }
+        .grid-item { position: relative; height: 350px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .grid-item::before { content: ''; position: absolute; inset: 0; background: rgba(44, 30, 34, 0.4); transition: background 0.4s ease; }
+        .grid-item:hover::before { background: rgba(44, 30, 34, 0.6); }
+        .grid-item span { position: relative; font-family: var(--font-serif); font-size: clamp(18px, 3vw, 26px); letter-spacing: 2px; text-transform: uppercase; text-align: center; padding: 10px; }
         
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 60px;
-        }
+        .btn-white { display: inline-block; background: var(--text-light); color: var(--dark-charcoal); padding: 15px 40px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; }
 
-        .menu-category h3 {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-            letter-spacing: 1px;
-        }
+        /* 4. Highlight Section */
+        .highlight-section { background-color: var(--taupe-light); padding: 80px 5vw; }
+        .highlight-container { display: flex; max-width: 1200px; align-items: center; gap: 40px; margin: 0 auto; }
+        .highlight-images { flex: 1; text-align: center; }
+        .img-large { width: 100%; max-width: 500px; height: auto; border-radius: 8px; box-shadow: 0 20px 40px rgba(44, 30, 34, 0.1); }
+        .highlight-content { flex: 1; }
+        .highlight-content h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 20px; color: var(--text-dark); }
+        .highlight-list { list-style: none; margin-top: 20px; }
+        .highlight-list li { font-size: 14px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; font-weight: 500;}
+        .highlight-list li i { color: var(--taupe); margin-right: 15px; }
 
-        .menu-category ul {
-            list-style: none;
-        }
+        .btn-taupe { display: inline-block; background: var(--taupe); color: var(--text-light); padding: 15px 40px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-top: 20px; }
 
-        .menu-category li {
-            font-size: 13px;
-            padding: 8px 0;
-            color: #555;
-            display: flex;
-            justify-content: space-between;
-        }
+        /* 5. Menu Matrix */
+        .full-menu { padding: 80px 5vw; max-width: 1200px; margin: 0 auto; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .menu-category h3 { font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #e0c8cc; padding-bottom: 10px; color: var(--dark-charcoal); }
+        .menu-category li { font-size: 14px; padding: 10px 0; color: #6a575b; display: flex; justify-content: space-between; border-bottom: 1px dashed #eedce0; }
 
-        /* Footer */
-        footer {
-            background: var(--dark-charcoal);
-            color: var(--text-light);
-            text-align: center;
-            padding: 60px 20px;
-        }
+        /* 6. Instagram Section (NEW) */
+        .instagram-section { background: var(--warm-white); padding: 60px 5vw; text-align: center; }
+        .instagram-section h2 { color: var(--dark-charcoal); }
+        .instagram-section p { font-size: 14px; color: var(--taupe); margin-bottom: 40px; font-weight: 500; letter-spacing: 1px; }
+        .insta-widget-container { max-width: 1000px; margin: 0 auto; min-height: 300px; background: #fff; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; padding: 20px; color: #888; font-size: 14px; border-radius: 8px;}
 
-        .footer-logo {
-            font-family: var(--font-serif);
-            font-size: 24px;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
+        /* 7. Testimonials & Footer */
+        .testimonials { background: var(--dark-charcoal); padding: 80px 5vw; text-align: center; color: #fff; }
+        .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 40px auto 0; }
+        .testi-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .testi-card p { font-size: 15px; font-style: italic; line-height: 1.8; margin: 20px 0; color: #f4e3e4; }
+        .testi-card h4 { font-size: 18px; color: var(--gold-accent); }
+        .stars { color: var(--gold-accent); font-size: 12px; }
 
-        .footer-info {
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: #999;
-            margin-bottom: 30px;
-            line-height: 2;
-        }
+        footer { background: #1a1012; color: var(--text-light); padding: 60px 5vw 30px; }
+        .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .footer-info p { font-size: 14px; color: #c4b5b8; line-height: 2; margin-bottom: 10px; }
+        .footer-info i { width: 20px; color: var(--gold-accent); }
+        .map-container { width: 100%; height: 250px; border-radius: 8px; overflow: hidden; }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+        .copyright { text-align: center; margin-top: 50px; font-size: 12px; color: #8a7d80; border-top: 1px solid #3a282c; padding-top: 20px; }
 
-        /* Responsive adjustments */
+        /* Floating Button */
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; box-shadow: 2px 2px 15px rgba(0,0,0,0.2); z-index: 999; }
+
+        /* --- MOBILE RESPONSIVE QUERIES --- */
         @media (max-width: 900px) {
-            .nav-left, .nav-right { display: none; }
+            header { flex-direction: column; background: rgba(26, 16, 18, 0.95); position: fixed; padding: 15px 5vw; }
+            .logo-container { margin: 10px 0; }
+            .hamburger { display: block; }
+            
+            .nav-links {
+                display: none; /* Hidden by default on mobile */
+                flex-direction: column;
+                width: 100%;
+                gap: 20px;
+                padding: 20px 0;
+            }
+            .nav-links.active { display: flex; } /* Toggled by JS */
+            
             .image-grid { grid-template-columns: 1fr; }
-            .highlight-container { flex-direction: column; }
-            .highlight-images { width: 100%; height: 400px; margin-bottom: 50px; }
-            .highlight-content { padding-left: 0; }
-            .watermark { display: none; }
+            .highlight-container { flex-direction: column; text-align: center; }
+            .highlight-list li { justify-content: center; }
+            .footer-container { text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="nav-left">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-        </div>
         <div class="logo-container">
             <div class="logo">ISHIKA</div>
             <div class="logo-sub">Makeover Studio</div>
         </div>
-        <div class="nav-right">
-            <a href="#">Policies</a>
-            <a href="#">Gallery</a>
-            <a href="tel:08360118469">Book Now</a>
+        <i class="fa-solid fa-bars hamburger" onclick="toggleMenu()"></i>
+        <div class="nav-links" id="navLinks">
+            <a href="#" onclick="toggleMenu()">Home</a>
+            <a href="#about" onclick="toggleMenu()">About</a>
+            <a href="#services" onclick="toggleMenu()">Services</a>
+            <a href="#instagram" onclick="toggleMenu()">Gallery</a>
+            <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+            <a href="#contact" onclick="toggleMenu()">Location</a>
+            <a href="https://wa.me/918360118469" target="_blank">Book Now</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-tagline">Upscale Beauty Salon In Sangrur</div>
         <h1>LUXURY BEAUTY,<br>REFINED ELEGANCE</h1>
-        <p>At Ishika Makeover, we specialize in creating effortlessly beautiful bridal looks and comprehensive salon services that empower you to feel your best. Our expert artists use the finest techniques to craft the perfection you've always dreamed of.</p>
+        <p>At Ishika Makeover, we specialize in creating effortlessly beautiful bridal looks and comprehensive salon services that empower you to feel your best.</p>
+        <a href="https://wa.me/918360118469" class="btn-gold" target="_blank">Book an Appointment</a>
     </section>
 
-    <section class="dark-section">
-        <div class="watermark">IM</div>
+    <section id="services" class="dark-section">
         <h2 class="section-title">LUXURY SERVICES,<br>CURATED FOR YOU</h2>
-        <p class="section-desc">As Sangrur's premier salon, we proudly offer high-performance treatments to ensure you not only look fabulous but feel nourished and radiant, every step of the way.</p>
+        <p class="section-desc">As Sangrur's premier salon, we proudly offer high-performance treatments to ensure you not only look fabulous but feel nourished and radiant.</p>
         
         <div class="image-grid">
             <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=800&auto=format&fit=crop');">
@@ -451,101 +228,107 @@
                 <span>Hair Styling</span>
             </div>
             <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop');">
-                <span>Facials</span>
+                <span>Skin Care</span>
             </div>
         </div>
-
         <a href="#all-services" class="btn-white">View All Services</a>
     </section>
 
-    <section class="philosophy-section">
-        <h2 class="philosophy-title">WE BELIEVE YOUR BEAUTY IS A REFLECTION OF WHO YOU ARE, AND IT SHOULD HELP YOU FEEL YOUR MOST CONFIDENT AND AUTHENTIC.</h2>
-        <p class="philosophy-text">At Ishika Makeover, our experienced artists specialize in signature bridal makeup, precise hair styling methods, and advanced aesthetic treatments. We work closely with you to understand your vision, ensuring personalized service and product recommendations.</p>
-        <a href="tel:08360118469" class="btn-taupe">Book Now</a>
-    </section>
-
-    <section class="highlight-section">
+    <section class="highlight-section" id="about">
         <div class="highlight-container">
             <div class="highlight-images">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNbCB4s4mQvVenuuPwZAOeL-Zt_6-I84bC31sS00R-aqKvohVBXU3bylyzFC21cW3v6WBCD-gLvmLl34L-gQVAf8Gm0tvXmF4-VXsh-uFO3gU_ukvEARNQM111AOOCqqdASnW4DuWz0N6GEb1T7aWBRPMLj3cnMiYqsqR5qO4C3fuotcxW_s6hbPAozQYW/s320/BA-earlobe-repair-WEBSITE-3.jpg" alt="Salon Profile" class="img-large">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNbCB4s4mQvVenuuPwZAOeL-Zt_6-I84bC31sS00R-aqKvohVBXU3bylyzFC21cW3v6WBCD-gLvmLl34L-gQVAf8Gm0tvXmF4-VXsh-uFO3gU_ukvEARNQM111AOOCqqdASnW4DuWz0N6GEb1T7aWBRPMLj3cnMiYqsqR5qO4C3fuotcxW_s6hbPAozQYW/s320/BA-earlobe-repair-WEBSITE-3.jpg" alt="Detail Shot" class="img-small">
+                <img src="https://raw.githubusercontent.com/makeoverishika1818-ux/ishikamakeover/main/ear-lobe-repair-gurgaon.webp" alt="Earlobe Repair Service" class="img-large">
             </div>
             <div class="highlight-content">
                 <h2>SEAMLESS<br>EARLOBE<br>RESTORATION</h2>
-                <p style="font-size: 13px; line-height: 1.8; color: #444; margin-bottom: 20px;">Experience our specialized clinical procedure designed to naturally repair stretched or torn earlobes. A completely refined, aesthetic approach to earlobe restoration without the need for traditional surgery.</p>
-                
+                <p style="font-size: 15px; line-height: 1.8; color: #6a575b; margin-bottom: 20px;">Experience our specialized clinical procedure designed to naturally repair stretched or torn earlobes without the need for traditional surgery.</p>
                 <ul class="highlight-list">
-                    <li>Non-Surgical Procedure</li>
-                    <li>Completely Painless</li>
-                    <li>Zero Stitches Required</li>
-                    <li>Rapid Healing Process</li>
-                    <li>Permanent Aesthetic Results</li>
+                    <li><i class="fa-solid fa-check"></i> Non-Surgical Procedure</li>
+                    <li><i class="fa-solid fa-check"></i> Completely Painless</li>
+                    <li><i class="fa-solid fa-check"></i> Zero Stitches Required</li>
                 </ul>
-
-                <a href="tel:08360118469" class="btn-taupe" style="margin-top: 40px;">Consult a Specialist</a>
+                <a href="https://wa.me/918360118469" class="btn-taupe" target="_blank">Consult a Specialist</a>
             </div>
         </div>
     </section>
 
     <section id="all-services" class="full-menu">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h2 class="section-title" style="color: var(--dark-charcoal);">THE SERVICE MENU</h2>
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 class="section-title" style="color: var(--dark-charcoal); font-size: clamp(2rem, 5vw, 2.5rem);">THE SERVICE MENU</h2>
         </div>
-        
         <div class="menu-grid">
             <div class="menu-category">
                 <h3>Makeup Artistry</h3>
                 <ul>
-                    <li>Signature Bridal Makeup</li>
-                    <li>HD Flawless Makeup</li>
-                    <li>Airbrush Artistry</li>
-                    <li>Engagement & Pre-Bridal</li>
-                    <li>Elegant Party Glamour</li>
+                    <li>Signature Bridal Makeup <span><i class="fa-solid fa-star" style="color:var(--gold-accent);font-size:10px;"></i></span></li>
+                    <li>HD Flawless Makeup </li>
+                    <li>Airbrush Artistry </li>
                 </ul>
             </div>
             <div class="menu-category">
                 <h3>Hair Studio</h3>
                 <ul>
-                    <li>Precision Haircuts</li>
-                    <li>Custom Hair Coloring</li>
-                    <li>Balayage & Highlights</li>
-                    <li>Keratin & Smoothening</li>
-                    <li>Luxury Hair Spa</li>
-                </ul>
-            </div>
-            <div class="menu-category">
-                <h3>Skin & Body</h3>
-                <ul>
-                    <li>Signature Facials</li>
-                    <li>Advanced Skin Treatments</li>
-                    <li>Full Body Waxing</li>
-                    <li>Threading & Shaping</li>
-                    <li>Bleach & D-Tan</li>
-                </ul>
-            </div>
-            <div class="menu-category">
-                <h3>Nail Bar</h3>
-                <ul>
-                    <li>Gel & Acrylic Extensions</li>
-                    <li>Custom Nail Art</li>
-                    <li>Gel Polish Overlays</li>
-                    <li>Classic Manicure</li>
-                    <li>Luxury Spa Pedicure</li>
+                    <li>Precision Haircuts </li>
+                    <li>Custom Hair Coloring </li>
+                    <li>Balayage & Highlights </li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-logo">ISHIKA MAKEOVER</div>
-        <div class="footer-info">
-            GALI NO. 1, RAILWAY ROAD, SANGRUR<br>
-            +91 83601 18469
+    <section id="instagram" class="instagram-section">
+        <h2 class="section-title">OUR LATEST WORK</h2>
+        <p>Follow us on Instagram <a href="https://www.instagram.com/ishika_makeover_sangrur/" target="_blank">@ishika_makeover_sangrur</a></p>
+        
+        <div class="insta-widget-container">
+            <p><i class="fa-brands fa-instagram" style="font-size: 24px; display:block; margin-bottom: 10px;"></i> 
+<!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-7939bd00-8904-47e7-b027-5e98fa98a3eb" data-elfsight-app-lazy></div>        </div>
+    </section>
+
+    <section id="reviews" class="testimonials">
+        <h2 class="section-title">CLIENT LOVE</h2>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Best salon in Sangrur! Ishika ma'am did my bridal makeup and it was absolutely flawless."</p>
+                <h4>- Simran K.</h4>
+            </div>
+            <div class="testi-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Got the earlobe treatment done here. It was completely painless and the results are amazing."</p>
+                <h4>- Neha G.</h4>
+            </div>
         </div>
-        <a href="https://share.google/O8RMjPTHUdD4hDqEt" target="_blank" class="btn-white" style="background: transparent; color: var(--text-light); border: 1px solid var(--text-light);">
-            View on Map
-        </a>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2>ISHIKA MAKEOVER</h2>
+                <p><i class="fa-solid fa-location-dot"></i> Railway Road, Street Number 1, Opposite Smart Point,<br>Gobind Pura Colony, Sangrur, Punjab 148001</p>
+                <p><i class="fa-solid fa-phone"></i> +91 83601 18469</p>
+                <div style="margin-top: 20px;">
+                    <a href="https://wa.me/918360118469" class="btn-gold" target="_blank">Chat on WhatsApp</a>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=Ishika%20Makeover%20Sangrur&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="copyright">© 2026 Ishika Makeover Studio. All Rights Reserved.</div>
     </footer>
 
-</body>
+    <a href="https://wa.me/918360118469" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+    </script>
+</body> 
 </html>
